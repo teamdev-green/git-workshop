@@ -1,3 +1,10 @@
+const config = {
+    main_page: document.getElementById("main_page"),//Home画面
+    introduce_cat_page: document.getElementById("introduce_cat_page"),//猫紹介画面
+    rate_plan_page: document.getElementById("rate_plan_page"),//料金プラン画面
+    contact_page: document.getElementById("contact_page")//コンタクト画面
+}
+
 const catList = [
     {"id":"2d8","name":"Spencer","sex":"男の子","url":"https://cdn2.thecatapi.com/images/2d8.jpg","width":3264,"height":2448, "registYear":2022, "registMonth":12, "registDay":1},
     {"id":"a5r","name":"Spike","sex":"女の子","url":"https://cdn2.thecatapi.com/images/a5r.jpg","width":612,"height":816, "registYear":2020, "registMonth":4, "registDay":1},
@@ -21,31 +28,46 @@ const catList = [
     {"id":"a5b","name":"Tommy","sex":"男の子","url":"https://cdn2.thecatapi.com/images/a5b.jpg","width":625,"height":873, "registYear":2020, "registMonth":9, "registDay":1}
 ]
 
+function ChangeToIntroduceCatPage(){
+    let introHtml =`
+        <div class="bg-white d-flex justify-content-center">
+            <div class="row p-4 col-10">
+        `
 
-let introHtml =`
-    <div class="bg-white d-flex justify-content-center">
-        <div class="row p-4 col-10">
-    `
+    for (let i = 0; i < catList.length; i++){
+        introHtml +=`
+            <div class="col-3 p-1">
+                <div class="row flex-column align-items-center text-center">
+                    <img class="cat-intro-img" src="${catList[i].url}">
+                    <h1 class="my-4"><strong><span class="text-danger">${addNewIfLessThanThreeMonth(catList[i].registYear, catList[i].registMonth)}</span>${catList[i].name}</strong></h1>
+                    <h2 class="my-2">${catList[i].sex}</h2>
+                    <h2>${catList[i].registYear}/${catList[i].registMonth}/${catList[i].registDay} 入店</h2>
+                </div>
+            </div>
+        `
+    }
 
-for (let i = 0; i < catList.length; i++){
-    introHtml +=`
-        <div class="col-3 p-1">
-            <div class="row flex-column align-items-center">
-                <img class="cat-intro-img" src="${catList[i].url}">
-                <h1 class="my-4"><strong>${catList[i].name}</strong></h1>
-                <h2 class="my-2">${catList[i].sex}</h2>
-                <h2>${catList[i].registYear}/${catList[i].registMonth}/${catList[i].registDay} 入店</h2>
+    introHtml += `
             </div>
         </div>
-    `
+        `
+
+        
+    function addNewIfLessThanThreeMonth(registYear, registMonth){
+        let today = new Date();
+        let beforeThreeMonth = today.setMonth(today.getMonth() - 3);
+        let registerDay = new Date(registYear, registMonth);
+
+        if (beforeThreeMonth.valueOf() <= registerDay.valueOf()) return "new ";
+        else return "";
+    }
+    
+
+    if (config.main_page.classList.contains("d-none") === false) config.main_page.classList.add("d-none");
+    if (config.rate_plan_page.classList.contains("d-none") === false) config.rate_plan_page.classList.add("d-none");
+    if (config.contact_page.classList.contains("d-none") === false) config.contact_page.classList.add("d-none");    
+    document.getElementById("introduce_cat_page").innerHTML = introHtml;
 }
-
-introHtml += `
-        </div>
-    </div>
-    `
-
-document.getElementById("introduce_cat_page").innerHTML = introHtml;
 
 
 
