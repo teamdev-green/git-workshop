@@ -30,18 +30,25 @@ const catList = [
 
 function ChangeToIntroduceCatPage(){
     let introHtml =`
-        <div class="bg-white d-flex justify-content-center">
+        <div class="bg-white vh-100 d-flex justify-content-center">
             <div class="row p-4 col-10">
         `
 
     for (let i = 0; i < catList.length; i++){
         introHtml +=`
-            <div class="col-3 p-1">
+            <div class="col-3 mb-3 p-2">
                 <div class="row flex-column align-items-center text-center">
                     <img class="cat-intro-img" src="${catList[i].url}">
-                    <h1 class="my-4"><strong><span class="text-danger">${addNewIfLessThanThreeMonth(catList[i].registYear, catList[i].registMonth)}</span>${catList[i].name}</strong></h1>
-                    <h2 class="my-2">${catList[i].sex}</h2>
-                    <h2>${catList[i].registYear}/${catList[i].registMonth}/${catList[i].registDay} 入店</h2>
+                    <p class="m-0">
+                        <strong>
+                            <span class="text-danger">
+                                ${addNewIfLessThanThreeMonth(catList[i].registYear, catList[i].registMonth)}
+                            </span>
+                            ${catList[i].name}
+                        </strong>
+                    </p>
+                    <p class="m-0">${catList[i].sex}</p>
+                    <p class="m-0">${catList[i].registYear}/${catList[i].registMonth}/${catList[i].registDay} 入店</p>
                 </div>
             </div>
         `
