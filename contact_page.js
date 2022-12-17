@@ -1,10 +1,3 @@
-const config = {
-    main_page: document.getElementById("main_page"),//Home画面
-    introduce_cat_page: document.getElementById("introduce_cat_page"),//猫紹介画面
-    rate_plan_page: document.getElementById("rate_plan_page"),//料金プラン画面
-    contact_page: document.getElementById("contact_page")//コンタクト画面
-}
-
 function ChangeToContactPage(){
     
 
@@ -35,6 +28,16 @@ function ChangeToContactPage(){
 
     if (config.main_page.classList.contains("d-none") === false) config.main_page.classList.add("d-none");
     if (config.introduce_cat_page.classList.contains("d-none") === false) config.introduce_cat_page.classList.add("d-none");
-    if (config.rate_plan_page.classList.contains("d-none") === false) config.rate_plan_page.classList.add("d-none");    
-    document.getElementById("contact_page").innerHTML = introHtml;
+    if (config.rate_plan_page.classList.contains("d-none") === false) config.rate_plan_page.classList.add("d-none");  
+    if (config.contact_page.classList.contains("d-none") === true){
+      config.contact_page.classList.remove("d-none");
+      config.contact_page.classList.add("d-block");
+      document.getElementById("contact_page").innerHTML = introHtml;
+  }
+
+  if (navbarConfig.mainNav.classList.contains("active") === true) navbarConfig.mainNav.classList.remove("active");
+  if (navbarConfig.priceNav.classList.contains("active") === true) navbarConfig.priceNav.classList.remove("active");
+  if (navbarConfig.introduceCatsNav.classList.contains("active") === true) navbarConfig.introduceCatsNav.classList.remove("active");
+  if (navbarConfig.conntactNav.classList.contains("active") === false)navbarConfig.conntactNav.classList.add("active");
+  conntactNav
 }
