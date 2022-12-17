@@ -1,0 +1,232 @@
+body {
+    background-color: #fdfbfb;
+  }
+/* Fonts */
+.Kosugi{
+    font-family: 'Kosugi';
+    color: rgb(116,102,89);
+}
+
+/* slider */
+.slider {
+    height: 50vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slider__content{
+    min-width: 100%;
+    animation: sliderAnime 12s ease-in-out infinite;
+}
+
+@keyframes sliderAnime {
+    0%{
+    }
+    10%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    40%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-200%);
+    }
+    60%{
+        transform: translateX(-200%);
+    }
+    70%{
+        transform: translateX(-300%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    90%{
+        transform: translateX(-400%);
+    }
+    1000%{
+        transform: translateX(-400%);
+    }   
+}
+
+.slider_image {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+/* card */
+.card-title{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content-wrapper {
+    display: flex;
+}
+  
+.card-content {
+    width: 45%;
+}
+  
+.card-photo {
+    height: 180px;
+    width: 240px;
+}
+
+.cat-intro-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+
+/* contact */
+  .Form {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+  
+  .Form-Item {
+  
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+ 
+  
+  
+  .Form-Item-Label {
+    width: 100%;
+    max-width: 248px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .Form-Item-Label.isMsg {
+    margin-top: 8px;
+    margin-bottom: auto;
+  }
+ 
+  .Form-Item-Label-Required {
+    border-radius: 6px;
+    margin-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 48px;
+    display: inline-block;
+    text-align: center;
+    background: #746659;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+ 
+  .Form-Item-Input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+  }
+
+  .Form-Item-Textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 120px;
+    padding-left: 1em;
+    padding-right: 5em;
+    height: 216px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+  }
+  
+  .Form-Btn {
+    border-radius: 6px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+    display: block;
+    letter-spacing: 0.05em;
+    background: #545454;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+
+/* Price table */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 650px;
+    table-layout: fixed;
+  }
+  
+  table tr {
+    background-color: #746659;
+    padding: .35em;
+    border-bottom: 2px solid #fff;
+  }
+  table th,
+  table td {
+    padding: 1em 10px 1em 1em;
+    border-right: 2px solid #fff;
+    color:#fff;
+  }
+  table th {
+    font-size: .85em;
+  }
+  table thead tr{
+    background-color: #fff;
+    color:#fff;
+  }
+  table tbody th {
+      background: #746659;
+      color: #fff;
+  }
+  .txt{
+     text-align: left;
+     font-size: .85em;
+  }
+  .price{
+    text-align: center;
+    color: #746659;
+    font-weight: bold;
+  }
+  .non{
+    background:#fff
+  }
+ 
+
